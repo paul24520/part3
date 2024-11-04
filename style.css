@@ -75,7 +75,7 @@ body {
   position: absolute;
   width: 18px;
   height: 12px;
-  background: url(/image/arrow.svg) no-repeat;
+  background: url(image/arrow.svg) no-repeat;
 }
 .brand::after {
   content: "";
