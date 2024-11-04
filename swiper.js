@@ -44,3 +44,4 @@ window.addEventListener("DOMContentLoaded", () => {
 
   createSwiper("(max-width: 768px)", ".mySwiper", swiperSettingsObj);
 });
+

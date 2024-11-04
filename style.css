@@ -36,6 +36,9 @@ body {
   margin: 0px;
   padding: 0px;
 }
+.container {
+  padding: 0 16px;
+}
 .brands__list {
   display: flex;
   min-width: 0;
@@ -46,11 +49,12 @@ body {
   font-family: "TT Lakes Regular";
   font-size: 16px;
   line-height: 24px;
-  min-width: 320px;
-  min-height: 80px;
+  /* min-width: 320px;
+  min-height: 80px; */
   padding: 16px;
   text-transform: uppercase;
   border-top: 1px solid #d9fff5;
+  background: linear-gradient(-270deg, #f8f8f8 0%, #ffffff 98.61%);
 }
 .brands__main {
   height: 140px;
@@ -60,6 +64,9 @@ body {
 .brands__list-item {
   width: 240px;
   padding-top: 16px;
+}
+.brand img {
+  padding-left: 16px;
 }
 .brand::before {
   content: "";
@@ -81,7 +88,6 @@ body {
   border: solid 2px #ff3e79;
 }
 .brand {
-  display: block;
   width: 240px;
   height: 100%;
   position: relative;
@@ -90,18 +96,32 @@ body {
   border-radius: 10px;
   display: flex;
   align-items: center;
+  box-sizing: border-box;
 }
-.container {
-  padding: 0 16px;
+.brands__expend {
+  display: none;
 }
 @media (min-width: 768px) {
+  .section-title {
+    background: linear-gradient(90deg, #f8f8f8 1.39%, #ffffff 100%);
+  }
+  .swiper {
+    width: auto;
+    height: auto;
+  }
   .brands__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px 24px;
+    height: 196px;
+    overflow: hidden;
+  }
+  .brands__list--visible {
+    height: auto;
+    overflow: visible;
   }
   .brands__main {
-    height: 500px;
+    height: auto;
     position: relative;
   }
   .swiper-pagination {
@@ -114,34 +134,39 @@ body {
   .brands__list-item {
     width: 100%;
   }
-  .show-all {
-    position: absolute;
-    left: 30px;
-    bottom: 100px;
+  .brands__expend {
+    display: block;
+    padding: 24px 0;
   }
-  .show {
+  .brands__expend-button {
     border: none;
     background-color: #f8f8f8;
     font-family: "TT Lakes Regular";
     font-weight: bold;
     cursor: pointer;
-    width: 133px;
-    height: 24px;
+    align-items: center;
   }
-  .all {
+  .brands__expend-text {
     font-size: 16px;
     line-height: 24px;
-
+    padding-left: 16px;
   }
-  .all::before {
+  .brands__expend-text::before {
     content: "";
-    top: 0 px;
-    left: -8px;
+    bottom: 30px;
+    left: 12px;
     position: absolute;
     background: url(image/expenddown.svg);
     width: 20px;
     height: 20px;
-}
+    transition: all 0.5s;
+  }
+  .brands__expend-text-rotate::before {
+    transform: rotate(180deg);
+    transition: all 0.5s;
+    bottom: 24px;
+  }
+
 }
 @media (min-width: 1120px) {
   .brands__list {
